@@ -1,5 +1,7 @@
 #include "ggml.h"
 
+#define restrict __restrict
+
 #if defined(_MSC_VER) || defined(__MINGW32__)
 #include <malloc.h> // using malloc.h with MSC/MINGW
 #elif !defined(__FreeBSD__) && !defined(__NetBSD__)
@@ -10641,4 +10643,5 @@ int ggml_cpu_has_vsx(void) {
 #endif
 }
 
+#undef restrict
 ////////////////////////////////////////////////////////////////////////////////
